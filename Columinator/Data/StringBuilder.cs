@@ -24,5 +24,23 @@ namespace Columinator.Data
 
             return dirPath;
         }
+
+        public static string getFileName (string filePath)
+        {
+            string filename = "";
+            if (filePath.Length > 0)
+            {
+                for (int i = filePath.Length - 1; i > 0; i--)
+                {
+                    if ((char)filePath[i] == '\\') break;
+                    filename = filePath[i] + filename;
+                }
+            }
+            return filename;
+        }
+
+          
+
+        
     }
 }
